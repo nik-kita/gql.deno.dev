@@ -4,6 +4,7 @@
     "jsr:@std/dotenv@~0.225.3": "0.225.3",
     "npm:@hono/zod-openapi@0.19": "0.19.0_hono@4.7.2_zod@3.24.2",
     "npm:@scalar/hono-api-reference@~0.5.177": "0.5.177_hono@4.7.2",
+    "npm:graphql-http@^1.22.4": "1.22.4_graphql@16.10.0",
     "npm:hono@^4.7.2": "4.7.2"
   },
   "jsr": {
@@ -916,6 +917,15 @@
     },
     "github-slugger@2.0.0": {
       "integrity": "sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw=="
+    },
+    "graphql-http@1.22.4_graphql@16.10.0": {
+      "integrity": "sha512-OC3ucK988teMf+Ak/O+ZJ0N2ukcgrEurypp8ePyJFWq83VzwRAmHxxr+XxrMpxO/FIwI4a7m/Fzv3tWGJv0wPA==",
+      "dependencies": [
+        "graphql"
+      ]
+    },
+    "graphql@16.10.0": {
+      "integrity": "sha512-AjqGKbDGUFRKIRCP9tCKiIGHyriz2oHEbPIbEtcSLSs4YjReZOIPQQWek4+6hjw62H9QShXHyaGivGiYVLeYFQ=="
     },
     "hast-util-embedded@3.0.0": {
       "integrity": "sha512-naH8sld4Pe2ep03qqULEtvYr7EjrLK2QHY8KJR6RJkTUjPGObe1vnx585uzem2hGra+s1q08DZZpfgDVYRbaXA==",
@@ -1895,6 +1905,7 @@
       "jsr:@std/dotenv@~0.225.3",
       "npm:@hono/zod-openapi@0.19",
       "npm:@scalar/hono-api-reference@~0.5.177",
+      "npm:graphql-http@^1.22.4",
       "npm:hono@^4.7.2"
     ]
   }
