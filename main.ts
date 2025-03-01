@@ -1,6 +1,7 @@
 import { OpenAPIHono } from "@hono/zod-openapi";
 import { apiReference } from "@scalar/hono-api-reference";
 import deno_jsonc from "./deno.json" with { type: "json" };
+import { gql2http } from "./gql2http.ts";
 
 const app = new OpenAPIHono();
 
@@ -22,6 +23,7 @@ app.get(
   }),
 );
 
+app.route("/api/gql2http", gql2http);
 app.notFound((c) => {
   return c.redirect("/api");
 });

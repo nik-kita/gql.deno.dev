@@ -7,6 +7,7 @@
     "@hono/zod-openapi": "npm:@hono/zod-openapi@^0.19.0",
     "@scalar/hono-api-reference": "npm:@scalar/hono-api-reference@^0.5.177",
     "@std/dotenv": "jsr:@std/dotenv@^0.225.3",
+    "graphql-http": "npm:graphql-http@^1.22.4",
     "hono": "npm:hono@^4.7.2"
   },
   "compilerOptions": {
