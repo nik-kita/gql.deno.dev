@@ -8,7 +8,8 @@ app.doc("/doc", {
   openapi: "3.0.0",
   info: {
     version: (deno_jsonc as { version: string }).version,
-    title: "TODO: name your project API",
+    title: "gql.deno.dev API",
+    description: "Dev proxy helper for gql <-> http converts",
   },
 });
 

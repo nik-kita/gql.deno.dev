@@ -1,6 +1,6 @@
 {
-  "name": "@todo/name-your-project",
-  "version": "0.1.0",
+  "name": "@nik-kita/gql",
+  "version": "0.1.1",
   "exports": "./main.ts",
   "nodeModulesDir": "auto",
   "imports": {
