@@ -1,0 +1,44 @@
+{
+  "name": "@todo/name-your-project",
+  "version": "0.1.0",
+  "exports": "./main.ts",
+  "nodeModulesDir": "auto",
+  "imports": {
+    "@hono/zod-openapi": "npm:@hono/zod-openapi@^0.19.0",
+    "@scalar/hono-api-reference": "npm:@scalar/hono-api-reference@^0.5.177",
+    "@std/dotenv": "jsr:@std/dotenv@^0.225.3",
+    "hono": "npm:hono@^4.7.2"
+  },
+  "compilerOptions": {
+    "exactOptionalPropertyTypes": true,
+    "strict": true
+  },
+  "tasks": {
+    "format": {
+      "description": "Fix formatting, linting",
+      "command": "deno fmt && deno lint"
+    },
+    "gitam": {
+      "description": "Quick git commit",
+      "command": "git add -A && git commit",
+      "dependencies": [
+        "format"
+      ]
+    },
+    "pr": {
+      "description": "Shortcut to create PR and merge dev branch into main",
+      "command": "git push origin dev && gh pr create --fill-verbose && gh pr merge --auto --merge",
+      "dependencies": [
+        "gitam"
+      ]
+    },
+    "build": {
+      "description": "Install dependencies, build project",
+      "command": "deno install --allow-scripts"
+    },
+    "dev": {
+      "description": "Declare entrypoint to run app",
+      "command": "deno run --unstable-kv -RWEN --watch main.ts"
+    }
+  }
+}

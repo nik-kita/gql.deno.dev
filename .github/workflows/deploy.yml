@@ -1,0 +1,43 @@
+name: Deploy
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  deploy:
+    name: Deploy
+    environment: main
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write # Needed for auth with Deno Deploy
+      contents: read # Needed to clone the repository
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+      - name: Install Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      - name: Load dotenv from github vars
+        run: >
+          echo """${{vars.DOTENV_CONTENT}}""" > .env
+
+      - name: Extend (optionally) override dotenv from github secrets
+        run: >
+          echo """${{secrets.DOTENV_CONTENT}}""" >> .env
+
+      - name: Build
+        run: deno task build
+
+      - name: Upload to Deno Deploy ${{vars.DENO_PROJECT_NAME}}
+        uses: denoland/deployctl@v1
+        with:
+          project: ${{vars.DENO_PROJECT_NAME}}
+          entrypoint: "main.ts"
+          root: ""
+          exclude: node_modules
