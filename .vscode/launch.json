@@ -16,7 +16,8 @@
         "run",
         "--unstable-kv",
         "--inspect-wait",
-        "--allow-all"
+        "--allow-all",
+        "--watch"
       ],
       "attachSimplePort": 9229
     }
