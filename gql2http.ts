@@ -52,7 +52,17 @@ gql2http.openapi({
 function parse_text(text: string) {
   const needle = '"""variables';
   const startCandidate = text.indexOf(needle);
-  const endCandidate = startCandidate && text.lastIndexOf('variables"""');
+  const endCandidate = startCandidate !== -1
+    ? text.lastIndexOf('variables"""')
+    : null;
+
+  if (endCandidate === -1) {
+    throw new HTTPException(400, {
+      message: 'Check your usage of """variables ... variables""" comments',
+      cause: "Unable to parse area for <variables>",
+    });
+  }
+
   const candidate = endCandidate &&
     text.slice(startCandidate + needle.length, endCandidate);
   const variables = candidate
