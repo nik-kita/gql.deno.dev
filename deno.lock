@@ -4,8 +4,10 @@
     "jsr:@std/dotenv@~0.225.3": "0.225.3",
     "npm:@hono/zod-openapi@0.19": "0.19.0_hono@4.7.2_zod@3.24.2",
     "npm:@scalar/hono-api-reference@~0.5.177": "0.5.177_hono@4.7.2",
-    "npm:graphql-http@^1.22.4": "1.22.4_graphql@16.10.0",
-    "npm:hono@^4.7.2": "4.7.2"
+    "npm:graphql-request@^7.1.2": "7.1.2_graphql@16.10.0",
+    "npm:hono@^4.7.2": "4.7.2",
+    "npm:json5@^2.2.3": "2.2.3",
+    "npm:safe-stable-stringify@^2.5.0": "2.5.0"
   },
   "jsr": {
     "@std/dotenv@0.225.3": {
@@ -186,6 +188,12 @@
         "@floating-ui/dom",
         "@floating-ui/utils",
         "vue-demi"
+      ]
+    },
+    "@graphql-typed-document-node/core@3.2.0_graphql@16.10.0": {
+      "integrity": "sha512-mB9oAsNCm9aM3/SOv4YtBMqZbYj10R7dkq8byBqxGY/ncFwhf2oQzMV+LCRlWoDSEBJ3COiR1yeDvMtsoOsuFQ==",
+      "dependencies": [
+        "graphql"
       ]
     },
     "@headlessui/tailwindcss@0.2.2_tailwindcss@4.0.9": {
@@ -918,9 +926,10 @@
     "github-slugger@2.0.0": {
       "integrity": "sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw=="
     },
-    "graphql-http@1.22.4_graphql@16.10.0": {
-      "integrity": "sha512-OC3ucK988teMf+Ak/O+ZJ0N2ukcgrEurypp8ePyJFWq83VzwRAmHxxr+XxrMpxO/FIwI4a7m/Fzv3tWGJv0wPA==",
+    "graphql-request@7.1.2_graphql@16.10.0": {
+      "integrity": "sha512-+XE3iuC55C2di5ZUrB4pjgwe+nIQBuXVIK9J98wrVwojzDW3GMdSBZfxUk8l4j9TieIpjpggclxhNEU9ebGF8w==",
       "dependencies": [
+        "@graphql-typed-document-node/core",
         "graphql"
       ]
     },
@@ -1131,6 +1140,9 @@
     },
     "json-stringify-deterministic@1.0.12": {
       "integrity": "sha512-q3PN0lbUdv0pmurkBNdJH3pfFvOTL/Zp0lquqpvcjfKzt6Y0j49EPHAmVHCAS4Ceq/Y+PejWTzyiVpoY71+D6g=="
+    },
+    "json5@2.2.3": {
+      "integrity": "sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg=="
     },
     "jsonpointer@5.0.1": {
       "integrity": "sha512-p/nXbhSEcu3pZRdkW1OfJhpsVtW1gd4Wa1fnQc9YLiTfAjn0312eMKimbdIQzuZl9aa9xUGaRlP9T/CJE/ditQ=="
@@ -1706,6 +1718,9 @@
     "require-from-string@2.0.2": {
       "integrity": "sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw=="
     },
+    "safe-stable-stringify@2.5.0": {
+      "integrity": "sha512-b3rppTKm9T+PsVCBEOUR46GWI7fdOs00VKZ1+9c1EWDaDMvjQc6tUwuFyIprgGgTcWoVHSKrU8H31ZHA2e0RHA=="
+    },
     "shell-quote@1.8.2": {
       "integrity": "sha512-AzqKpGKjrj7EM6rKVQEPpB288oCfnrEIuyoT9cyF4nmGa7V8Zk6f7RRqYisX8X9m+Q7bd632aZW4ky7EhbQztA=="
     },
@@ -1905,8 +1920,10 @@
       "jsr:@std/dotenv@~0.225.3",
       "npm:@hono/zod-openapi@0.19",
       "npm:@scalar/hono-api-reference@~0.5.177",
-      "npm:graphql-http@^1.22.4",
-      "npm:hono@^4.7.2"
+      "npm:graphql-request@^7.1.2",
+      "npm:hono@^4.7.2",
+      "npm:json5@^2.2.3",
+      "npm:safe-stable-stringify@^2.5.0"
     ]
   }
 }
