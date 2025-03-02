@@ -8,8 +8,7 @@ export const gql2http = new OpenAPIHono();
 gql2http.openapi({
   method: "post",
   path: "/",
-  summary:
-    "Parse graphql string into valid json object that should be used for make POST request to your grq-server",
+  summary: "Parse graphql string into json object for request",
   description: `
   * One operation at a time (root query/mutation block)
   * How pass variables? (if you need)
@@ -29,8 +28,24 @@ gql2http.openapi({
   `,
   request: {
     body: {
+      required: true,
       content: {
         "text/plain": {
+          example: `
+query Example($limit: Int!) {
+  bla_bla_bla(limit: $limit) {
+    answer
+  }
+}
+
+"""variables
+
+{
+  limit: 4,
+}
+
+variables"""
+          `,
           schema: z.string(),
         },
       },
