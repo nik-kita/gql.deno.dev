@@ -10,16 +10,22 @@ gql2http.openapi({
   path: "/",
   summary: "Parse graphql string into json object for request",
   description: `
+  * For simplicity in body you can send raw string (so omit content-type) or choose "other" option
   * One operation at a time (root query/mutation block)
   * How pass variables? (if you need)
     Wrap the variables object with special comments:
       * \`"""variables\`  before
       * \`variables"""\` after
-    Example:
+  
+  * Example:
     \`\`\`
+    mutation Login($email: String!) {
+      login(email: $email)
+    }
+
     """variables
     {
-      hello: 'world'
+      email: "test@mail.com"
     }
     variables"""
     \`\`\`
